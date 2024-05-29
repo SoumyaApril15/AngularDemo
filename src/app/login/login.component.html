@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>Login</h2>
+    <form (ngSubmit)="login()">
+       
+      <div class="form-group">
+        <label for="userType">Select User Type:</label>
+        <select class="form-control" id="userType" [(ngModel)]="userType" name="userType">
+          <option value="admin">Admin</option>
+          <option value="user1">User 1</option>
+          <option value="user2">User 2</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password">
+      </div>
+      <div class="form-group">
+      <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
